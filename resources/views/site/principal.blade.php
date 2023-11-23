@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('site.layouts.basico')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Cidades</title>
-    <!-- Link para o Bootstrap via CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
+@section('titulo', 'Home')
 
-<body class="container mt-5">
+@section('conteudo')
 
     <h1 class="mb-4">Lista de Cidades</h1>
 
@@ -48,6 +41,4 @@
     <!-- Adicione scripts ou bibliotecas JavaScript conforme necessário -->
     <script src="seu-script.js"></script>
 
-</body>
-
-</html>
+@endsection
