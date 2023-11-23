@@ -42,7 +42,22 @@ services:
             - "3388:3306"
         networks:
             - laravel
-
+    
+     # phpMyAdmin
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        restart: unless-stopped
+        environment:
+            PMA_HOST: db
+            PMA_PORT: 3306
+            MYSQL_ROOT_PASSWORD: root
+        ports:
+            - "8080:80"
+        networks:
+            - laravel
+        depends_on:
+            - db
     # queue
     queue:
         image: especializati/laravel9-app
@@ -65,3 +80,5 @@ services:
 networks:
     laravel:
         driver: bridge
+
+   
