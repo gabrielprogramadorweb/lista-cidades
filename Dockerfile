@@ -17,6 +17,9 @@ RUN apt-get update && apt-get install -y \
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Copie o arquivo de configuração do Apache para habilitar mod_rewrite
+COPY docker/apache2.conf /etc/apache2/apache2.conf
+
 # Install PHP extensions
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd sockets
 
@@ -35,6 +38,12 @@ RUN pecl install -o -f redis \
 
 # Set working directory
 WORKDIR /var/www
+
+# Defina as permissões adequadas
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Copie os arquivos do projeto para o contêiner
+COPY . /var/www/html
 
 # Copy custom configurations PHP
 COPY docker/php/custom.ini /usr/local/etc/php/conf.d/custom.ini

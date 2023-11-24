@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-    color: red;
+    color: #007bff;
     text-align: center;
 }
 
@@ -34,15 +34,19 @@ th, td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #dee2e6;
-}
-
-th {
-    background-color: #007bff;
-    color: #fff;
+    transition: transform 0.3s ease; /* Adiciona uma transição suave de 0.3 segundos */
 }
 
 tbody tr:hover {
-    background-color: #f0f0f0;
+    background-color: #4CAF50;
+    color: #fff; /* Mude para a cor verde desejada */
+    cursor: pointer; /* Adiciona uma seta do mouse ao passar sobre as linhas da tabela */
+}
+
+/* Remova o efeito de escala da célula da cidade específica */
+tbody tr:hover td:first-child {
+    /* Remova as propriedades de transformação */
+    font-weight: bold; /* Opcional: torna o texto mais destacado */
 }
 
 /* Responsividade */
