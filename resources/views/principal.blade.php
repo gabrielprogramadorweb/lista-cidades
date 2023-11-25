@@ -17,7 +17,7 @@
                 @foreach ($dados as $dado)
                     <tr>
                         <td>{{ $dado->cidade }}</td>
-                        <td>{{ $dado->populacao }}</td>
+                        <td>{{ number_format($dado->populacao, 0, ',', '.') }}</td>
                     </tr>
                 @endforeach
             </tbody>

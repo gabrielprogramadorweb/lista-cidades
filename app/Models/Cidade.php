@@ -10,4 +10,5 @@ class Cidade extends Model
     use HasFactory;
     
     protected $table = 'cidades';
+    protected $fillable = ['cidade', 'populacao', 'populacao_ano_passado'];
 }

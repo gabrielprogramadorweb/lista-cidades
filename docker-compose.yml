@@ -80,6 +80,7 @@ services:
 
   node-red:
     image: nodered/node-red
+    mem_limit: 212m
     ports:
       - "1880:1880"
     networks:

@@ -15,8 +15,6 @@ use App\Models\Dado;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
 Route::get('/cidades', [DadoController2::class, 'getCidades']);
 
